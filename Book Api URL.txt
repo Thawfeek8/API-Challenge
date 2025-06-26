@@ -1,0 +1,45 @@
+# ✅ AUTHENTICATION ENDPOINTS (PORT: 4040)
+
+POST http://localhost:4040/api/auth/register
+Request Body (JSON):
+{
+  "username": "john123",
+  "password": "secret123"
+}
+
+POST http://localhost:4040/api/auth/login
+Request Body (JSON):
+{
+  "username": "john123",
+  "password": "secret123"
+}
+
+
+# 📘 BOOK API ENDPOINTS (REQUIRES JWT BEARER TOKEN IN HEADER)
+
+GET http://localhost:4040/api/books
+→ Get all books
+
+GET http://localhost:4040/api/books/{isbn}
+→ Get book by ISBN
+
+POST http://localhost:4040/api/books
+Request Body (JSON):
+{
+  "isbn": "1234567890",
+  "title": "Spring Boot Essentials",
+  "author": "Jane Doe",
+  "publicationYear": 2024
+}
+
+PUT http://localhost:4040/api/books/{isbn}
+Request Body (JSON):
+{
+  "isbn": "1234567890",
+  "title": "Spring Boot Advanced",
+  "author": "Jane Doe",
+  "publicationYear": 2025
+}
+
+DELETE http://localhost:4040/api/books/{isbn}
+→ Delete book by ISBN
